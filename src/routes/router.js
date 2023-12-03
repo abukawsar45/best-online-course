@@ -6,6 +6,7 @@ import CourseDetails from "../components/CourseDetails/CourseDetails";
 import Courses from "../components/Courses/Courses";
 import Dashboard from "../components/Dashboard/Dashboard";
 import About from '../components/About/About';
+import Login from "../components/Login/Login";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
       {
         path: '/about',
         element: <About />,
+      },
+      {
+        path: '/login',
+        element: <Login />,
       },
     ],
   },

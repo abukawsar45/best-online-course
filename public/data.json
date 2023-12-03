@@ -1,6 +1,6 @@
 [
   {
-    
+    "id": 1,
     "name": "Introduction to React Native",
     "instructor": "John Doe",
     "description": "Learn the basics of React Native development and build your first mobile app.",
@@ -54,19 +54,19 @@
     ],
     "students": [
       {
-        "_id": ObjectId("101"),
+        "id": 101,
         "name": "Alice Johnson",
         "email": "alice@example.com"
       },
       {
-        "_id": ObjectId("102"),
+        "id": 102,
         "name": "Bob Smith",
         "email": "bob@example.com"
       }
     ]
   },
   {
-    
+    "id": 2,
     "name": "C++ Programming",
     "instructor": "Dr. C++ Master",
     "description": "Master the fundamentals of C++ programming language.",
@@ -95,19 +95,19 @@
     ],
     "students": [
       {
-        "_id": ObjectId("201"),
+        "id": 201,
         "name": "Pritter",
         "email": "Pritter@example.com"
       },
       {
-        "_id": ObjectId("202"),
+        "id": 202,
         "name": "Harry",
         "email": "harry@example.com"
       }
     ]
   },
   {
-   
+    "id": 3,
     "name": "Java Fundamentals",
     "instructor": "Java Guru",
     "description": "Build a strong foundation in Java programming.",
@@ -141,19 +141,19 @@
     ],
     "students": [
       {
-        "_id": ObjectId("301"),
+        "id": 301,
         "name": "Charlie Brown",
         "email": "charlie@example.com"
       },
       {
-        "_id": ObjectId("302"),
+        "id": 302,
         "name": "Diana Smith",
         "email": "diana@example.com"
       }
     ]
   },
   {
-  
+    "id": 4,
     "name": "Python for Beginners",
     "instructor": "Python Pro",
     "description": "Learn Python from scratch and start building applications.",
@@ -177,19 +177,19 @@
     ],
     "students": [
       {
-        "_id": ObjectId("401"),
+        "id": 401,
         "name": "Eva Johnson",
         "email": "eva@example.com"
       },
       {
-        "_id": ObjectId("402"),
+        "id": 402,
         "name": "Frank Miller",
         "email": "frank@example.com"
       }
     ]
   },
   {
-
+    "id": 5,
     "name": "Vue.js Fundamentals",
     "instructor": "Mosh",
     "description": "Master the fundamentals of Vue.js and create interactive web applications.",
@@ -218,19 +218,19 @@
     ],
     "students": [
       {
-        "_id": ObjectId("501"),
+        "id": 501,
         "name": "Isaac Man",
         "email": "isaac@example.com"
       },
       {
-        "_id": ObjectId("502"),
+        "id": 502,
         "name": "Jessica Davis",
         "email": "jessica@example.com"
       }
     ]
   },
   {
-   
+    "id": 6,
     "name": "React.js Essentials",
     "instructor": "React.js Guru",
     "description": "Learn the essentials of React.js and build modern user interfaces.",
@@ -269,19 +269,19 @@
     ],
     "students": [
       {
-        "_id": ObjectId("601"),
+        "id": 601,
         "name": "Keith Miller",
         "email": "keith@example.com"
       },
       {
-        "_id": ObjectId("602"),
+        "id": 602,
         "name": "Laura Turner",
         "email": "laura@example.com"
       }
     ]
   },
   {
-   
+    "id": 7,
     "name": "Next.js Advanced",
     "instructor": "Next.js Expert",
     "description": "Advance your knowledge in Next.js and build powerful web applications.",
@@ -315,19 +315,19 @@
     ],
     "students": [
       {
-        "_id": ObjectId("701"),
+        "id": 701,
         "name": "Nathan Harris",
         "email": "nathan@example.com"
       },
       {
-        "_id": ObjectId("702"),
+        "id": 702,
         "name": "Olivia Turner",
         "email": "olivia@example.com"
       }
     ]
   },
   {
-  
+    "id": 8,
     "name": ".NET Development",
     "instructor": ".NET Master",
     "description": "Explore the world of .NET development and build robust applications.",
@@ -351,12 +351,12 @@
     ],
     "students": [
       {
-        "_id": ObjectId("801"),
+        "id": 801,
         "name": "Grace Taylor",
         "email": "grace@example.com"
       },
       {
-        "_id": ObjectId("802"),
+        "id": 802,
         "name": "Henry Johnson",
         "email": "henry@example.com"
       }
