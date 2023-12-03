@@ -10,7 +10,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className='bg-gradient-to-r from-blue-500 to-pink-600 text-white my-4 md:my-8 lg:my-32 px-2 md:px-4 lg:px-12'>
+    <div className='bg-gradient-to-r from-blue-400 to-pink-500 text-white my-4 md:my-8 lg:my-32 px-2 md:px-4 lg:px-12'>
       <footer className='container   py-2 md:py-4 lg:py-9'>
         <div>
           <div className='grid grid-cols-1 mt-4 md:mt-0 md:grid-cols-3 lg:grid-cols-7 gap-2 md:gap-8 lg:gap-8 '>
@@ -22,7 +22,7 @@ const Footer = () => {
                     className=' md:w-8 lg:w-12 h-auto rounded'
                     alt='logo'
                   />
-                  <h2 className='web-logo text-black'>TECH CAMP </h2>
+                  <h2 className='font-orbit text-black'>TECH CAMP </h2>
                 </div>{' '}
               </Link>
               <p className='mt-2 md:mt-4 lg:w-56 '>

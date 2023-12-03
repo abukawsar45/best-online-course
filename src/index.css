@@ -2,20 +2,76 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@400;500;600&family=Square+Peg&display=swap');
 
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
 
-.web-logo{
-   font-family: 'Orbitron', sans-serif;
-}
+
+  @import url('https://fonts.googleapis.com/css2?family=Tektur:wght@900&display=swap');
+
+
+@import url('https://fonts.googleapis.com/css2?family=Risque&family=Road+Rage&family=Roboto&family=Roboto:wght@600&family=Roboto+Flex:opsz,wght@8..144,600&family=Roboto+Mono:wght@600&family=Roboto+Serif:opsz,wght@8..144,600&family=Roboto+Slab:wght@600&family=Josefin+Sans:wght@500&family=Kenia&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700&display=swap');
+
+  @import url('https://fonts.googleapis.com/css2?family=Mukta:wght@600&family=Orbitron:wght@900&display=swap');
+  
+  @import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@900&display=swap');
+
+
+
+  @import url('https://fonts.googleapis.com/css2?family=Stoke&display=swap');
+
+
 
 .my-container{
   @apply px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8
 }
 
+.font-orbit{
+   font-family: 'Orbitron', sans-serif;
+}
+
+.web-font {
+    font-family: 'Pacifico', cursive;
+}
+
+.font-roboto{
+  font-family: 'Roboto', sans-serif
+}
+.font-roboto-serif{
+  font-family: 'Roboto Serif', sans-serif
+}
+.font-kenia{
+  font-family: 'Kenia', sans-serif
+}
+.font-josefin{
+  font-family: 'Josefin Sans', sans-serif
+}
+.font-mukta{
+  font-family: 'Mukta', sans-serif;
+}
+.font-nova{
+  font-family: 'Nova Square', sans-serif;
+}
+.font-stoke{
+  font-family: 'Stoke', serif;
+}
+.font-tektur{
+  font-family: 'Tektur', sans-serif;
+}
+.font-exo{
+  font-family: 'Exo 2', sans-serif;
+}
+
 .custom-container{
   @apply md:my-24 px-2 md:px-4 lg:px-12 my-20 lg:mt-32 lg:mb-32
 }
+
 
 /* .btn{
   @apply inline-flex items-center h-12 px-6 mb-3 font-medium text-white transition duration-200 rounded shadow-md  md:mb-0 bg-blue-400 hover:bg-blue-700

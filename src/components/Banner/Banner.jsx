@@ -11,11 +11,11 @@ const Banner = () => {
             Best Learning Platform!
           </p>
         </div>
-        <h2 className='max-w-lg my-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
+        <h2 className='max-w-lg my-6  text-3xl tracking-tight text-gray-900 sm:text-3xl md:text-4xl font-orbit'>
           Learn without <br />
           <span className='inline-block text-blue-400'>limits</span>
         </h2>
-        <p className='text-base text-gray-700 md:text-lg'>
+        <p className='text-base text-gray-700 md:text-lg font-nova'>
           Learn new skills, earn credit toward a degree, or advance your career
           at your own pace. Join our community to stay up to date, and build
           your bridges anywhere, anytime with free courses on the Tech Camp

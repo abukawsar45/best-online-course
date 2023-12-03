@@ -56,28 +56,32 @@ const CourseDetails = () => {
       <div className='grid  grid-cols-12 gap-3 md:gap-5 lg:gap-8'>
         <div className='col-span-12 md:col-span-5'>
           <div>
-            <h3 className='text-4xl font-bold'>{name}</h3>
-            <p className='my-2 md:my-3 lg:my-4 text-xl lg:text-2xl font-semibold '>
+            <h3 className='text-4xl font-josefin'>{name}</h3>
+            <p className='my-2 md:my-3 lg:my-4 text-xl font-orbit '>
               Instructor: {instructor}
             </p>
             <div className='my-3 md:my-6 lg:my-8 rounded-lg'>
-              <div className='flex items-center mt-2 md:mt-4  lg:mt-6'>
-                <div className='basis-1/2 flex items-center gap-4'>
-                  <p className='font-semibold text-slate-700'>Status:</p>
-                  <p className='font-semibold'>{enrollmentStatus} </p>
+              <div className='flex items-center mt-2 md:mt-3  lg:mt-4'>
+                <div className='basis-1/2 flex items-center gap-4 font-josefin text-2xl'>
+                  <p className='text-slate-700'>Status:</p>
+                  <p className=''>{enrollmentStatus} </p>
                 </div>
-                <div className='flex items-center gap-4 '>
-                  <p className='text-slate-700 font-semibold'>Location:</p>
-                  <p className='font-semibold'>{location} </p>
+                <div className='flex items-center gap-4 font-josefin text-2xl'>
+                  <p className='text-slate-700 '>Location:</p>
+                  <p className=''>{location} </p>
                 </div>
               </div>
-              <div className='flex items-center gap-4 mt-3 md:mt-4 lg:mt-8'>
-                <p className=' text-slate-700 font-semibold'>Schedule:</p>
-                <p className='font-semibold'>{schedule} </p>
+              <div className='flex items-center gap-4 mt-3 md:mt-4 lg:mt-8 font-josefin text-lg'>
+                <p className=' text-slate-700 '>Schedule:</p>
+                <p className=''>{schedule} </p>
               </div>
               <div className='my-2 md:mt-4 lg:mt-6 flex items-center gap-4'>
-                <p className='text-xl '>Course Duration:</p>
-                <p className='text-2xl font-bold'>{duration} </p>
+                <p className='text-xl font-roboto'>Course Duration:</p>
+                <p className='text-2xl font-exo'>{duration} </p>
+              </div>
+              <div className='my-2 md:mt-4 lg:mt-6 flex items-center gap-4'>
+                <p className='text-xl font-roboto'>Total Students:</p>
+                <p className='text-2xl font-exo'>{students?.length || 0} </p>
               </div>
               <button
                 onClick={() => handleInrollClass(_id)}
@@ -91,11 +95,15 @@ const CourseDetails = () => {
         <div className=' col-span-12 md:col-span-7'>
           <div>
             <img
-              src={thumbnail || 'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg'}
+              src={
+                thumbnail ||
+                'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg'
+              }
               alt='course-pic'
               className='rounded-lg w-full h-full object-cover'
               onError={(e) => {
-                e.target.src = 'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg';
+                e.target.src =
+                  'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg';
               }}
             />
           </div>
@@ -103,32 +111,40 @@ const CourseDetails = () => {
       </div>
       <div className='mt-2 md:mt-4 lg:mt-8 md:flex gap-4'>
         <div className='mt-3 md:mt-4 lg:mt-8 md:basis-1/2 w-full'>
-          <h4 className='my-1'>Topic:</h4>
+          <h4 className='my-1 py-2 text-2xl border-b border-green-500'>
+            You can learn from this course:
+          </h4>
           <ul>
             {prerequisites?.map((topic, index) => (
-              <li key={index} className='bg-slate-200 px-3 py-2 rounded my-2'>
+              <li
+                key={index}
+                className='bg-violet-400 px-3 py-2 rounded-full my-2 font-mukta text-xl'
+              >
                 {' '}
                 {index + 1}. {topic}
               </li>
             ))}
           </ul>
         </div>
+        {/* Syllabus */}
         <div className='mt-3 md:mt-4 lg:mt-8 md:basis-1/2 w-full'>
-          <h4 className='my-1'>Syllabus:</h4>
+          <h4 className='my-1 py-2 text-2xl border-b border-green-500  '>
+            Syllabus:
+          </h4>
           <ul>
             {syllabus?.map((syllabusData, index) => {
               const { content, topic, week } = syllabusData;
               return (
                 <div
                   key={syllabusData.topic}
-                  className='bg-slate-200 px-3 py-2 rounded my-2'
+                  className='bg-orange-200 px-3 py-2 rounded my-2'
                 >
                   <button
                     onClick={() => toggleSyllabus(week)}
-                    className={`w-full px-2 py-1 flex items-center justify-between hover:bg-gray-300 rounded-md ${
+                    className={`w-full font-tektur px-2 py-1 flex items-center justify-between hover:bg-gray-300 rounded-md ${
                       openSyllabus === week
-                        ? 'text-blue-500 bg-red-300 hover:bg-red-400 '
-                        : ''
+                        ? 'text-blue-500 bg-slate-200 hover:bg-slate-300 duration-300'
+                        : 'duration-300'
                     } `}
                   >
                     Week-{week}
@@ -144,8 +160,12 @@ const CourseDetails = () => {
                   </button>
                   {openSyllabus === week && (
                     <div className='mt-2 px-2 py-1'>
-                      <h5 className='mt-1 md:my-2'>Content: {content}</h5>
-                      <p className='mb-1 md:mb-2'>Topic: {topic}</p>
+                      <h5 className='mt-1 md:my-2 font-nova text-xl '>
+                        Topic: {topic}
+                      </h5>
+                      <p className='mb-1 md:mb-2 font-stoke'>
+                        Content: {content}
+                      </p>
                     </div>
                   )}
                 </div>

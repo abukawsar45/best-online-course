@@ -38,13 +38,15 @@ const Course = ({ course }) => {
           />
         </div>
         <div className='bg-black px-6 py-4 bg-opacity-60 md:opacity-0 md:hover:opacity-100 text-slate-200 md:absolute inset-0 transition-opacity duration-300 flex flex-col'>
-          <p className='text-xl'>{name} </p>
+          <p className='text-xl font-kenia'>{name} </p>
           <br />
-          <p>{description.substring(0, 60)}... </p>
+          <p className='font-josefin'>{description.substring(0, 60)}... </p>
           <div className='mt-auto flex justify-between items-center'>
-            <p>Total Students: {students.length || 0}</p>
+            <p className='font-josefin'>
+              Total Students: {students.length || 0}
+            </p>
             <Link to={`../courseDetails/${_id}`}>
-              <button className='px-4 py-2  font-medium text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700'>
+              <button className=' px-4 py-2  font-medium text-white transition duration-200 rounded shadow-md bg-blue-400 hover:bg-blue-700'>
                 View Details
               </button>
             </Link>
@@ -52,7 +54,7 @@ const Course = ({ course }) => {
         </div>
       </div>
       <div className='hidden md:block'>
-        <h4 className='font-thin text-xl'>{name} </h4>
+        <h4 className='font-bold text-xl '>{name} </h4>
       </div>
     </div>
   );

@@ -10,7 +10,7 @@ const Navbar = () => {
   const navData = (
     <>
       <li onClick={() => setShowNavLinks(!showNavLinks)}>
-        <Link to='/' className='web-logo'>
+        <Link to='/' className='web-font'>
           TECH CAMP
         </Link>
       </li>
