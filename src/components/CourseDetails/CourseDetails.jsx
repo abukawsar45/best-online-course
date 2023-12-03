@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { useGetCourseQuery } from '../../redux/features/courses/courseApi';
 import LoaderSpinner from './../../utilities/LoaderSpinner';
 import { GiAlliedStar, GiCalendar } from 'react-icons/gi';
+import { IoIosArrowDown, IoToggle } from 'react-icons/io';
 import { BsCalendarDay } from 'react-icons/bs';
 
 import RecommendedCourse from './../RecommendedCourse/RecommendedCourse';
@@ -12,7 +13,7 @@ const CourseDetails = () => {
   console.log(id);
 
   const [getCourseData, setGetCourseData] = useState({});
-  const [openSyllabus, setOpenSyllabus] = useState({});
+  const [openSyllabus, setOpenSyllabus] = useState(null);
 
   const { data: coursesData, isLoading } = useGetCourseQuery();
     useEffect(() => {
@@ -42,7 +43,13 @@ const CourseDetails = () => {
   console.log('line-15', syllabus);
 
 
+  const toggleSyllabus = (week) => {
+    setOpenSyllabus((prev) => (prev === week ? null : week));
+  };
 
+  const handleInrollClass = (classId) => {
+    console.log('line-51', classId)
+  };
 
   return (
     <div className=''>
@@ -72,7 +79,10 @@ const CourseDetails = () => {
                 <p className='text-xl '>Course Duration:</p>
                 <p className='text-2xl font-bold'>{duration} </p>
               </div>
-              <button className='mt-3 md:mt-6 bg-blue-500 font-semibold text-white rounded-lg border-2 border-blue-500 hover:text-blue-500 hover:border-blue-500   hover:bg-white px-10 py-3'>
+              <button
+                onClick={() => handleInrollClass(_id)}
+                className='mt-3 md:mt-6 bg-blue-500 font-semibold text-white rounded-lg border-2 border-blue-500 hover:text-blue-500 hover:border-blue-500   hover:bg-white px-10 py-3'
+              >
                 Inroll This Course
               </button>
             </div>
@@ -81,11 +91,11 @@ const CourseDetails = () => {
         <div className=' col-span-12 md:col-span-7'>
           <div>
             <img
-              src={thumbnail || 'https://i.ibb.co/5RMWQpJ/images-2.jpg'}
+              src={thumbnail || 'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg'}
               alt='course-pic'
-              className='rounded-lg w-full'
+              className='rounded-lg w-full h-full object-cover'
               onError={(e) => {
-                e.target.src = 'https://i.ibb.co/5RMWQpJ/images-2.jpg';
+                e.target.src = 'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg';
               }}
             />
           </div>
@@ -114,15 +124,30 @@ const CourseDetails = () => {
                   className='bg-slate-200 px-3 py-2 rounded my-2'
                 >
                   <button
-                    onClick={() => setOpenSyllabus(week)}
-                    className={`w-full flex items-center justify-between hover:bg-gray-300 rounded-md ${
-                      openSyllabus === week ? '' : ''
+                    onClick={() => toggleSyllabus(week)}
+                    className={`w-full px-2 py-1 flex items-center justify-between hover:bg-gray-300 rounded-md ${
+                      openSyllabus === week
+                        ? 'text-blue-500 bg-red-300 hover:bg-red-400 '
+                        : ''
                     } `}
                   >
-                    {' '}
                     Week-{week}
+                    <span>
+                      <IoIosArrowDown
+                        className={`text-sm transform ${
+                          openSyllabus === week
+                            ? 'rotate-180 duration-300'
+                            : 'duration-300'
+                        }`}
+                      />
+                    </span>
                   </button>
-                  {openSyllabus === week && <div>{content}</div>}
+                  {openSyllabus === week && (
+                    <div className='mt-2 px-2 py-1'>
+                      <h5 className='mt-1 md:my-2'>Content: {content}</h5>
+                      <p className='mb-1 md:mb-2'>Topic: {topic}</p>
+                    </div>
+                  )}
                 </div>
               );
             })}

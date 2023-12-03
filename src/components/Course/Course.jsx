@@ -18,34 +18,26 @@ const Course = ({ course }) => {
     _id,
   } = course || {};
 
-  // console.log({
-  //   description,
-  //   duration,
-  //   enrollmentStatus,
-  //   instructor,
-  //   location,
-  //   name,
-  //   prerequisites,
-  //   schedule,
-  //   students,
-  //   syllabus,
-  //   thumbnail,
-  //   _id,
-  // });
+  console.log(course);
+
   return (
     <div className=''>
-      <div className='overflow-hidden relative transition duration-300 transform hover:-translate-y-2 rounded'>
+      <div className='overflow-hidden relative transition duration-300 transform md:hover:-translate-y-2 rounded'>
         <div>
           <img
-            src={thumbnail || 'https://i.ibb.co/5RMWQpJ/images-2.jpg'}
+            src={
+              thumbnail ||
+              'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg'
+            }
             alt='course-pic'
-            className='rounded-lg w-full'
+            className='md:rounded-lg w-full object-cover h-44 md:h-56 lg:h-64 max-h-80'
             onError={(e) => {
-              e.target.src = 'https://i.ibb.co/5RMWQpJ/images-2.jpg';
+              e.target.src =
+                'https://instructor-academy.onlinecoursehost.com/content/images/2023/05/How-to-Create-an-Online-Course-For-Free--Complete-Guide--6.jpg';
             }}
           />
         </div>
-        <div className='bg-black px-6 py-4 bg-opacity-60 opacity-0 hover:opacity-100 text-slate-200 absolute inset-0 transition-opacity duration-300 flex flex-col'>
+        <div className='bg-black px-6 py-4 bg-opacity-60 md:opacity-0 md:hover:opacity-100 text-slate-200 md:absolute inset-0 transition-opacity duration-300 flex flex-col'>
           <p className='text-xl'>{name} </p>
           <br />
           <p>{description.substring(0, 60)}... </p>
@@ -59,7 +51,7 @@ const Course = ({ course }) => {
           </div>
         </div>
       </div>
-      <div className=''>
+      <div className='hidden md:block'>
         <h4 className='font-thin text-xl'>{name} </h4>
       </div>
     </div>
