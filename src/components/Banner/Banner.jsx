@@ -12,7 +12,7 @@ const Banner = () => {
           </p>
         </div>
         <h2 className='max-w-lg my-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
-          Learn without{' '} <br/>
+          Learn without <br />
           <span className='inline-block text-blue-400'>limits</span>
         </h2>
         <p className='text-base text-gray-700 md:text-lg'>
@@ -22,14 +22,17 @@ const Banner = () => {
           platform.
         </p>
         <div className='my-6'>
-          <Link to='/courseList' className='btn md:w-auto md:mr-4'>
+          <Link
+            to='/courseList'
+            className='inline-flex items-center h-12 px-6 mb-3 font-medium text-white transition duration-200 rounded shadow-md  md:mb-0 bg-blue-400 hover:bg-blue-700 md:w-auto md:mr-4'
+          >
             <div className='inline-flex items-center justify-center w-full h-full'>
               <p className='mr-3'>Visit Our Courses</p>
             </div>
           </Link>
           <Link
             to='/about'
-            className='inline-flex items-center font-semibold text-gray-800 transition-colors duration-200 hover:text-blue-700'
+            className=' h-12 px-6 mb-3  rounded shadow-md  md:mb-0  inline-flex items-center font-semibold text-gray-800 transition-colors border-2 hover:border-blue-500 border-slate-200 duration-200 hover:text-blue-500'
           >
             Learn More
           </Link>

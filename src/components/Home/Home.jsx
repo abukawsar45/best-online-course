@@ -1,6 +1,7 @@
 import React from 'react';
-import Banner from './Banner';
-import Courses from '../Courses/Courses';
+import Banner from '../Banner/Banner';
+import CoursesForHomePage from '../CoursesForHomePage/CoursesForHomePage';
+import LearnAndGrow from '../LearnAndGrow/LearnAndGrow';
 
 
 const Home = () => {
@@ -9,7 +10,8 @@ const Home = () => {
   return (
     <div className=''>
       <Banner />
-      <Courses/>
+      <CoursesForHomePage />
+      <LearnAndGrow/>
     </div>
   );
 };

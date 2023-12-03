@@ -9,9 +9,9 @@ const Courses = () => {
 
   return (
     <div>
-      <div className='grid gap-6 mb-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4 '>
-        {coursesData?.map((book) => (
-          <Course key={book.isbn13} book={book} />
+      <div className='grid gap-6 mb-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 '>
+        {coursesData?.map((course) => (
+          <Course key={course._id} course={course} />
         ))}
       </div>
     </div>

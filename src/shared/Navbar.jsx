@@ -1,26 +1,28 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import ActiveLink from './../utilities/ActiveLink';
+
 
 const Navbar = () => {
   const user = false;
   const [showNavLinks, setShowNavLinks] = useState(false);
-  // console.log(showNavLinks)
+  // console.log(ActiveLink)
   const navData = (
     <>
       <li onClick={() => setShowNavLinks(!showNavLinks)}>
-        <Link to='/' className='web-logo' >
-        TECH CAMP
+        <Link to='/' className='web-logo'>
+          TECH CAMP
         </Link>
       </li>
 
       <li className='font-bold' onClick={() => setShowNavLinks(!showNavLinks)}>
-        <Link to='/courseList'>Course List</Link>
+        <ActiveLink to='/courseList'>Course List</ActiveLink>
       </li>
       <li className='font-bold' onClick={() => setShowNavLinks(!showNavLinks)}>
-        <Link to='/dashboard'>Dashboard</Link>
+        <ActiveLink to='/dashboard'>Dashboard</ActiveLink>
       </li>
       <li className='font-bold' onClick={() => setShowNavLinks(!showNavLinks)}>
-        <Link to='/about'> About</Link>
+        <ActiveLink to='/about'> About</ActiveLink>
       </li>
 
       {!user && (
@@ -29,21 +31,21 @@ const Navbar = () => {
             onClick={() => setShowNavLinks(!showNavLinks)}
             className='md:hidden'
           >
-            <Link to='/login'>
+            <ActiveLink to='/login'>
               <button className='px-3 py-1 rounded-lg bg-white border-2 border-sky-500 text-blue-500 font-semibold hover:text-white hover:bg-blue-500'>
                 Login
               </button>
-            </Link>
+            </ActiveLink>
           </li>
           <li
             onClick={() => setShowNavLinks(!showNavLinks)}
             className='md:hidden'
           >
-            <Link to='/register'>
+            <ActiveLink to='/signUp'>
               <button className='px-3 py-1 rounded-lg bg-blue-400 border-2 border-blue-400 font-semibold text-white hover:bg-blue-500'>
-                Register
+                Sign Up
               </button>
-            </Link>
+            </ActiveLink>
           </li>
         </>
       )}
@@ -88,18 +90,18 @@ const Navbar = () => {
             <div className=''>
               <div className=' flex flex-row gap-4  justify-end  '>
                 <span onClick={() => setShowNavLinks(!showNavLinks)}>
-                  <Link to='/login'>
+                  <ActiveLink to='/login'>
                     <button className='px-3 py-1 rounded-lg bg-white border-2 border-sky-500 text-blue-500 font-semibold hover:text-white hover:bg-blue-500'>
                       Login
                     </button>
-                  </Link>
+                  </ActiveLink>
                 </span>
                 <span onClick={() => setShowNavLinks(!showNavLinks)}>
-                  <Link to='/register'>
+                  <ActiveLink to='/signUp'>
                     <button className='px-3 py-1 rounded-lg bg-blue-400 border-2 border-blue-400 font-semibold text-white hover:bg-blue-500'>
-                      Register
+                      Sign Up
                     </button>
-                  </Link>
+                  </ActiveLink>
                 </span>
               </div>
             </div>

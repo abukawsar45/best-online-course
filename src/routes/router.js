@@ -7,6 +7,7 @@ import Courses from "../components/Courses/Courses";
 import Dashboard from "../components/Dashboard/Dashboard";
 import About from '../components/About/About';
 import Login from "../components/Login/Login";
+import SignUp from "../components/SignUp/SignUp";
 
 const router = createBrowserRouter([
   {
@@ -24,7 +25,7 @@ const router = createBrowserRouter([
         element: <Courses />,
       },
       {
-        path: '/course/:id',
+        path: '/courseDetails/:id',
         element: <CourseDetails />,
       },
       {
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
       {
         path: '/login',
         element: <Login />,
+      },
+      {
+        path: '/signUp',
+        element: <SignUp />,
       },
     ],
   },
