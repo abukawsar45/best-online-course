@@ -1,8 +1,13 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { FcGoogle } from 'react-icons/fc';
 
 const Login = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='flex justify-center items-center  py-4'>
       <div className='flex flex-col max-w-md p-6 rounded-md sm:p-10 bg-gray-100 text-gray-900'>

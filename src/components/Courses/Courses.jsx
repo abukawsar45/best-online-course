@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useGetCourseQuery } from '../../redux/features/courses/courseApi';
 import Course from '../Course/Course';
 
 const Courses = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
-    const { data: coursesData , isLoading } = useGetCourseQuery();
-    console.log(coursesData);
+  const { data: coursesData, isLoading } = useGetCourseQuery();
+  console.log(coursesData);
 
   return (
     <div>
