@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 
 const Course = ({ course }) => {
-  console.log(course);
+  // console.log(course);
   // const {_id,name, instructor, duration, description, duration,enrollmentStatus, }
   const {
     description,
@@ -18,7 +18,7 @@ const Course = ({ course }) => {
     _id,
   } = course || {};
 
-  console.log(course);
+  // console.log(course);
 
   return (
     <div className=''>

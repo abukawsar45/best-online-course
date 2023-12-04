@@ -6,22 +6,61 @@ import { GiAlliedStar, GiCalendar } from 'react-icons/gi';
 import { IoIosArrowDown, IoToggle } from 'react-icons/io';
 import { BsCalendarDay } from 'react-icons/bs';
 
+
 import RecommendedCourse from './../RecommendedCourse/RecommendedCourse';
+import { useDispatch, useSelector } from 'react-redux';
+import { checkAuthStatus } from '../../redux/features/user/userSlice';
+import { onAuthStateChanged } from 'firebase/auth';
+import auth from '../../firebase/firebase.config';
 
 const CourseDetails = () => {
   const { id } = useParams();
-  console.log(id);
+  // console.log(id);
+
+  
+  const dispatch = useDispatch();
+  const { isLoading: isUserLoading } = useSelector((state) => state.userSlice);
 
   const [getCourseData, setGetCourseData] = useState({});
   const [openSyllabus, setOpenSyllabus] = useState(null);
+  const [user, setUser] = useState(null);
+  console.log(user);
 
   const { data: coursesData, isLoading } = useGetCourseQuery();
     useEffect(() => {
       window.scrollTo(0, 0);
       const specificCourse = coursesData.filter((course) => course._id === id);
-      console.log(specificCourse);
+      // console.log(specificCourse);
       setGetCourseData(specificCourse[0]);
     }, []);
+  
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if (!isUserLoading) {
+        // Dispatch action if needed
+        dispatch(checkAuthStatus());
+
+        // Set the user in the component state
+        setUser(user);
+
+        // Log user details to console
+        if (user) {
+          console.log('User details:', {
+            displayName: user.displayName,
+            email: user.email,
+            uid: user.uid,
+          });
+        } else {
+          console.log('User not logged in.');
+        }
+      }
+    });
+
+    return () => {
+      unsubscribe();
+    };
+  }, [dispatch, isUserLoading]);
+
 
     if (isLoading) {
       return <LoaderSpinner />;
@@ -40,7 +79,7 @@ const CourseDetails = () => {
     thumbnail,
     _id,
   } =  getCourseData;
-  console.log('line-15', syllabus);
+  // console.log(syllabus);
 
 
   const toggleSyllabus = (week) => {
@@ -50,6 +89,8 @@ const CourseDetails = () => {
   const handleInrollClass = (classId) => {
     console.log('line-51', classId)
   };
+
+ 
 
   return (
     <div className=''>

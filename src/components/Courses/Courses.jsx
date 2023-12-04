@@ -8,7 +8,7 @@ const Courses = () => {
   }, []);
 
   const { data: coursesData, isLoading } = useGetCourseQuery();
-  console.log(coursesData);
+  // console.log(coursesData);
 
   return (
     <div>

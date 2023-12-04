@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 
 const CoursesForHomePage = () => {
   const { data: coursesData, isLoading } = useGetCourseQuery();
-  console.log(coursesData);
+  // console.log(coursesData);
 
   return (
     <div>
